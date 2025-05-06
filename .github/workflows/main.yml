@@ -30,8 +30,8 @@ jobs:
       run: |
         npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 
-    - name: Lint
-      run: npm run lint
+    - name: Lint code
+      run: npx eslint . --ext .js,.jsx,.ts,.tsx
 
     - name: Run unit tests
       run: npm test -- --watchAll=false
