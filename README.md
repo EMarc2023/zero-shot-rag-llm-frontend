@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Build Status
+[![Frontend CI](https://github.com/EMarc2023/zero-shot-rag-llm-frontend/actions/workflows/main.yml/badge.svg)](https://github.com/EMarc2023/zero-shot-rag-llm-frontend/actions/workflows/main.yml)
+
 ## Architectural Diagram
 
 ```mermaid
