@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]  
+        node-version: [22.14]  
 
     steps:
     - name: Checkout code
@@ -28,7 +28,7 @@ jobs:
 
     - name: Install ESLint dependencies (CI only)
       run: |
-        npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+        run: npm install --save-dev eslint prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser
 
     - name: Lint code
       run: npx eslint .
