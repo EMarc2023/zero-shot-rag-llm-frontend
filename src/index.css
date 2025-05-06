@@ -1,13 +1,82 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* index.css or App.css */
+/* Downloads the Open Sans font*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/**
+ * Tailwind CSS v3.0+ configuration
+ * This file is used to import Tailwind's base styles, components, and utilities.
+ * It also includes custom styles for inputs, buttons, and other elements.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensures box-sizing is handled consistently */
+* {
+  box-sizing: border-box; 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Ensures font is applied globally */
+body {
+  font-family: 'Open Sans', sans-serif; 
+}
+
+/* Ensures placeholder uses the same font as the input */
+input::placeholder,
+textarea::placeholder {
+  font-family: inherit; /* Ensures the same font is used */
+  font-size: inherit;   /* Matches the font size */
+  color: #6b7280;       /* Adjust color if needed */
+}
+
+/* Overrides Tailwind's utility classes for inputs */
+input, textarea, select {
+  display: block; /* Force elements to display as block for proper alignment */
+  width: 100%; /* Ensure inputs take up the full width of the container */
+  margin-bottom: 12px; /* Give space between inputs */
+  padding: 12px; /* Add padding to inputs for better visuals */
+  border-radius: 8px; /* Slight rounded corners for inputs */
+  border: 1px solid #ccc; /* Light border around inputs */
+}
+
+/* Customises button style */
+button {
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 5px; /* Space between buttons */
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* Sets button colour schemes */
+.btn-gradient {
+  background: linear-gradient(to top, #3b82f6, #06b6d4); /* Blue → Cyan */
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Sets button hover colour schemes */
+.btn-gradient:hover {
+  background: linear-gradient(to top, #2563eb, #0891b2); /* Darker Blue → Teal */
+  transform: scale(1.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Sets disabled button colour schemes */
+.btn-gradient:disabled {
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
 }

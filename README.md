@@ -2,6 +2,30 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Architectural Diagram
+
+```mermaid
+graph TD
+    subgraph "React Frontend"
+        A[User prompt]
+        B[Chat display]
+        C[Interactive buttons]
+    end
+    subgraph "FastAPI Backend"
+        D[API endpoints]
+        E[RAG-LLM pipeline]
+        F[FAISS]
+        G[TinyLlama]
+    end
+    A --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> E
+    E --> D
+    D --> B
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
