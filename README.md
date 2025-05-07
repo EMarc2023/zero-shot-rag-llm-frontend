@@ -54,7 +54,7 @@ graph TD
 
 ### Backend API (FastAPI) Integration
 
-This frontend communicates with the backend API (for FastAPI, the default is `http://localhost:8000`), as configured via environment variables, for the user to send queries to the chatbot and receive responses from the chatbot. The primary endpoint used is `/answer_with_user_prompts/`, where data is exchanged in the JSON format.
+This frontend communicates with the backend API (for FastAPI, the default is `http://localhost:8000`), as configured via environment variables, for the user to send queries to the chatbot and receive responses from the chatbot. The endpoint used is `/answer_with_user_prompts/`, where data is exchanged in the JSON format.
 
 ### Prerequisites
 
@@ -65,7 +65,7 @@ Before using this codebase, install `Node.js` and the `npm` package manager:
 
 ### How to run the code
 
-1.  Clone the repository by running: `git clone (https://github.com/EMarc2023/zero-shot-rag-llm-frontend)` into your prefered directory (in this example: `frontend` directory).
+1.  Clone the repository by running: `git clone (https://github.com/EMarc2023/zero-shot-rag-llm-frontend)` into your preferred directory (in this example: `frontend` directory).
 2.  Navigate to the `frontend` directory using command line: `cd frontend`.
 3.  Install dependencies: `npm install` or `yarn install`.
 
