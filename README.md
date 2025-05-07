@@ -30,7 +30,7 @@ graph TD
         C[Interactive buttons]
     end
     subgraph "FastAPI Backend"
-        D[API endpoints]
+        D[API endpoint]
         E[RAG-LLM pipeline]
         F[FAISS]
         G[TinyLlama]
@@ -79,7 +79,8 @@ Once the dependencies are installed, in the project directory, you can run:
 
 #### `npm start`
 
-This command runs the app in the development mode.\
+This command runs the app in the development mode.
+
 Open [http://localhost:3000](http://localhost:3000) to view the UI in the browser.
 
 #### `npm test`
@@ -90,7 +91,7 @@ The documentation for running unit tests for React apps can be found in [running
 
 #### `npm run build`
 
-This command builds the app for production to the `build` folder.\
+This command builds the app for production to the `build` folder.
 
 It bundles React in production mode and optimises the build for the best performance. 
 
