@@ -14,7 +14,11 @@ The author (Elizabeth Marcellina) can be contacted on LinkedIn: https://www.link
 
 ## Key Features
 
-This UI allows the users to interact with the RAG-LLM chatbot. There are 4 buttons in the UI `Send to chatbot`, `Clear forms`, `Clear chat`, and `Download chat`. Note that the button `Send to chatbot` is disabled when the `RAG keyword(s):` and `User prompt:` fields are empty, or if the chatbot is in the midst of generating a response (which is indicated by a spinner and a `Loading...` indicator).  
+This UI allows the users to interact with the RAG-LLM chatbot. Screenshots of the UI are available in the `screenshots` folder in this repo. 
+
+The UI has 2 forms: `RAG keyword(s)` (for contextual/semantic search) and `User prompts` (for asking the chatbot questions), as well as a dropdown menu for the context summarisation methods `BART Summary` or `Truncate context`.
+
+The UI has 4 buttons: `Send to chatbot`, `Clear forms`, `Clear chat`, and `Download chat`. Note that the button `Send to chatbot` is disabled when the `RAG keyword(s):` and `User prompt:` fields are empty, or if the chatbot is in the midst of generating a response (which is indicated by a spinner and a `Loading...` indicator). 
 
 ## Architectural Diagram
 
@@ -46,7 +50,7 @@ This frontend communicates with the backend API (for FastAPI, the default is `ht
 
 ## Environmental Variables
 
-To configure the backend API URL, create the environment variables `.env.development` and `env.production` in the frontend directory with the following content:
+To configure the backend API URL, create the environment variables `.env.development` and `.env.production` in the frontend directory with the following content:
 
 ```
 REACT_APP_BACKEND_API_URL=backend_url
