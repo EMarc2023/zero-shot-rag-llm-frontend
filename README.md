@@ -18,7 +18,7 @@ This UI allows the users to interact with the RAG-LLM chatbot. Screenshots of th
 
 The UI has 2 forms: `RAG keyword(s)` (for contextual/semantic search) and `User prompts` (for asking the chatbot questions), as well as a dropdown menu for the context summarisation methods `BART Summary` or `Truncate context`.
 
-The UI has 4 buttons: `Send to chatbot`, `Clear forms`, `Clear chat`, and `Download chat`. Note that the button `Send to chatbot` is disabled when the `RAG keyword(s):` and `User prompt:` fields are empty, or if the chatbot is in the midst of generating a response (which is indicated by a spinner and a `Loading...` indicator). 
+The UI has 4 buttons (referred to as "Interactive buttons" in the architectural diagram below): `Send to chatbot`, `Clear forms`, `Clear chat`, and `Download chat`. Note that the button `Send to chatbot` is disabled when the `RAG keyword(s):` and `User prompt:` fields are empty, or if the chatbot is in the midst of generating a response (which is indicated by a spinner and a `Loading...` indicator). 
 
 ## Architectural Diagram
 
@@ -44,21 +44,17 @@ graph TD
     D --> B
 ```
 
-## Backend API (FastAPI) Integration
+## Code Quality & Maintenance
 
-This frontend communicates with the backend API (for FastAPI, the default is `http://localhost:8000`), as configured via environment variables, for the user to send queries to the chatbot and receive responses from the chatbot. The primary endpoint used is `/answer_with_user_prompts/`, where data is exchanged in the JSON format.
-
-## Environmental Variables
-
-To configure the backend API URL, create the environment variables `.env.development` and `.env.production` in the frontend directory with the following content:
-
-```
-REACT_APP_BACKEND_API_URL=backend_url
-```
-
-The `backend_url`, for FastAPI, is by default `http://localhost:8000`.
+* Linting: This code has been linted with the latest stable version of ESLint for code quality control.
+* CI/CD pipeline: Fully automated with linting and unit tests.
+* Build time: Up to ~45 seconds on Github Actions.
 
 ## Access & Execution
+
+### Backend API (FastAPI) Integration
+
+This frontend communicates with the backend API (for FastAPI, the default is `http://localhost:8000`), as configured via environment variables, for the user to send queries to the chatbot and receive responses from the chatbot. The primary endpoint used is `/answer_with_user_prompts/`, where data is exchanged in the JSON format.
 
 ### Prerequisites
 
@@ -73,7 +69,17 @@ Before using this codebase, install `Node.js` and the `npm` package manager:
 2.  Navigate to the `frontend` directory using command line: `cd frontend`.
 3.  Install dependencies: `npm install` or `yarn install`.
 
-### Available Scripts
+### Environmental variables
+
+To configure the backend API URL, create the environment variables `.env.development` and `.env.production` in the frontend directory with the following content:
+
+```
+REACT_APP_BACKEND_API_URL=backend_url
+```
+
+The `backend_url`, for FastAPI, is by default `http://localhost:8000`.
+
+### Available scripts
 
 Once the dependencies are installed, in the project directory, you can run:
 
